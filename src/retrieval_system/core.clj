@@ -13,8 +13,7 @@
 
 (def ^:private props
   (doto (Properties.)
-    (.put "annotators" "tokenize, ssplit, pos, lemma, ner, parse")
-    (.put "parse.maxlen" (str (-> config :nlp :max-sentence-length)))))
+    (.put "annotators" "tokenize, ssplit, pos, lemma, ner, parse")))
 
 (def ^:private pipeline
   (StanfordCoreNLP. props))
